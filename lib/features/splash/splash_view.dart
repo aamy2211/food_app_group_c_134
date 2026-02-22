@@ -63,9 +63,9 @@ class _SplashViewState extends State<SplashView> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 // الطربوش (جزئين فوق بعض)
-                buildImage(AppIcons.topLogo, width: 20),
+                buildImage(AppImages.topLogo, width: 20),
                 const SizedBox(height: 2),
-                buildImage(AppIcons.headLogo, width: 40),
+                buildImage(AppImages.headLogo, width: 40),
 
                 const SizedBox(height: 0), // مسافة بين الطربوش والكلمة
                 // كلمة FOOD (الحروف جنب بعض)
@@ -78,7 +78,7 @@ class _SplashViewState extends State<SplashView> {
                     const SizedBox(width: 4),
                     buildImage(AppIcons.oLogo, width: 45),
                     const SizedBox(width: 4),
-                    buildImage(AppIcons.dLogo, width: 50),
+                    buildImage(AppImages.dLogo, width: 50),
                   ],
                 ),
               ],
