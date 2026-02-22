@@ -1,4 +1,4 @@
-class AppIcons {
+abstract class AppIcons {
   static const String home = 'assets/icons/Home.svg';
   static const String search = 'assets/icons/Search.svg';
   static const String back = 'assets/icons/back.svg';
@@ -34,6 +34,20 @@ class AppIcons {
   static const String underArrow = 'assets/icons/UnderArrow.svg';
   static const String unseen = 'assets/icons/unseen.svg';
   static const String volume1 = 'assets/icons/volume1.svg';
-  static const String watch = 'assets/icons/Watch.svg';
+  static const String clock = 'assets/icons/clock.svg';
   static const String x = 'assets/icons/x.svg';
+  static const String background1 = 'assets/icons/background1.svg';
+  static const String dLogo = 'assets/icons/dLogo.svg';
+  static const String fLogo = 'assets/icons/fLogo.svg';
+  static const String oLogo = 'assets/icons/oLogo.svg';
+  static const String headLogo = 'assets/icons/headLogo.svg';
+  static const String highlogo = 'assets/icons/highlogo.svg';
+  static const String logo2 = 'assets/icons/logo2.svg';
+  static const String topLogo = 'assets/icons/topLogo.svg';
+  static const String resturantLogo = 'assets/icons/resturantLogo.svg';
+  static const String chicken = 'assets/icons/Chicken.svg';
+  static const String onion = 'assets/icons/onion.svg';
+  static const String salt = 'assets/icons/salt.svg';
+  static const String papper = 'assets/icons/papper.svg';
+  static const String thom = 'assets/icons/thom.svg';
 }

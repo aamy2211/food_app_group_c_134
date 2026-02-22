@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter_svg/flutter_svg.dart'; // تأكد إنك ضفت المكتبة دي
-import '../../core/utils/app_images.dart';
+import 'package:food_app/core/functions/navigations.dart';
+import 'package:food_app/core/utils/app_icons.dart';
+import 'package:food_app/features/food_details_02/screens/food_details_screen.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -15,6 +17,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
+      pushReplacementTo(context,FoodDetailsScreen() );
       // الانتقال للصفحة التالية بعد الميتينج
     });
   }
@@ -44,14 +47,14 @@ class _SplashViewState extends State<SplashView> {
           Positioned(
             top: 0,
             left: 0,
-            child: buildImage(AppImages.highlogo, width: screenWidth * 0.50),
+            child: buildImage(AppIcons.highlogo, width: screenWidth * 0.50),
           ),
 
           // 2. الصورة البرتقالية اللي تحت على اليمين (النقشة الكبيرة)
           Positioned(
             bottom: 0,
             right: 0,
-            child: buildImage(AppImages.logo2, width: screenWidth * 0.5),
+            child: buildImage(AppIcons.logo2, width: screenWidth * 0.5),
           ),
 
           // 3. اللوجو بالكامل في النص (الطربوش + كلمة FOOD)
@@ -60,22 +63,22 @@ class _SplashViewState extends State<SplashView> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 // الطربوش (جزئين فوق بعض)
-                buildImage(AppImages.topLogo, width: 20),
+                buildImage(AppIcons.topLogo, width: 20),
                 const SizedBox(height: 2),
-                buildImage(AppImages.headLogo, width: 40),
+                buildImage(AppIcons.headLogo, width: 40),
 
                 const SizedBox(height: 0), // مسافة بين الطربوش والكلمة
                 // كلمة FOOD (الحروف جنب بعض)
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    buildImage(AppImages.fLogo, width: 45),
+                    buildImage(AppIcons.fLogo, width: 45),
                     const SizedBox(width: 4),
-                    buildImage(AppImages.oLogo, width: 45),
+                    buildImage(AppIcons.oLogo, width: 45),
                     const SizedBox(width: 4),
-                    buildImage(AppImages.oLogo, width: 45),
+                    buildImage(AppIcons.oLogo, width: 45),
                     const SizedBox(width: 4),
-                    buildImage(AppImages.dLogo, width: 50),
+                    buildImage(AppIcons.dLogo, width: 50),
                   ],
                 ),
               ],

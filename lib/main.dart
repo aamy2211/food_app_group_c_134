@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/core/theme/themes.dart';
 import 'package:food_app/features/splash/splash_view.dart';
 //import 'core/utils/app_fonts.dart';
-import 'core/theme/app_colors.dart';
+import 'core/styles/app_colors.dart';
 
 void main() {
   runApp(const FoodApp());
@@ -20,12 +21,8 @@ class FoodApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Food App Group C-134',
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
-
-            primaryColor: AppColors.primary,
-          ),
-          home: const SplashView(),
+          theme: AppThemes.lightThemes,
+          home: SplashView(),
         );
       },
     );
