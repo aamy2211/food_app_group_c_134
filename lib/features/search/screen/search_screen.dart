@@ -20,7 +20,15 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        // يا بولا، برافو على المجهود، بس احنا عندنا سيستم نافيجيشن جاهز في المشروع (navigations.dart)، استخدمه علطول بدل ما تكرر الكود هنا
+        /*
+          يا بولا، برافو على المجهود، بس عشان نوحد الكود في المشروع كله، استخدم ملف (navigations.dart) 
+          اللي في الـ core. هتلاقي فيه دوال جاهزة زي:
+          - pushTo(context, YourScreen()) -> عشان تفتح صفحة جديدة
+          - pop(context) -> عشان ترجع لورا
+          - pushReplacementTo(context, YourScreen()) -> لو عايز تقفل الصفحة الحالية وتفتح واحدة جديدة
+          
+          جرب تستخدمهم بدل Navigator.push العادية عشان الكود يبقى أنظف وأسهل في التعديل بعدين.
+        */
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
