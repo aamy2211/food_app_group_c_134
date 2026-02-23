@@ -30,10 +30,7 @@ class SearchField extends StatelessWidget {
       readOnly: readOnly,
       onTap: onTap,
       onChanged: onChanged,
-      style: GoogleFonts.sen(
-        color: const Color(0xFF32343E),
-        fontSize: 14,
-      ),
+      style: GoogleFonts.sen(color: const Color(0xFF32343E), fontSize: 14),
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: GoogleFonts.sen(
@@ -42,7 +39,10 @@ class SearchField extends StatelessWidget {
         ),
         filled: true,
         fillColor: const Color(0xFFF0F5FA),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 16,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide.none,
@@ -57,12 +57,17 @@ class SearchField extends StatelessWidget {
         ),
         prefixIcon: Padding(
           padding: const EdgeInsets.only(left: 16, right: 12),
-          child: prefixIcon ??
+          child:
+              prefixIcon ??
               SvgPicture.asset(
-                AppIcons.search, // Replace with your standard search icon if needed
+                AppIcons
+                    .search, // Replace with your standard search icon if needed
                 width: 20,
                 height: 20,
-                colorFilter: const ColorFilter.mode(Color(0xFF7E8CA0), BlendMode.srcIn),
+                colorFilter: const ColorFilter.mode(
+                  Color(0xFF7E8CA0),
+                  BlendMode.srcIn,
+                ),
               ),
         ),
         prefixIconConstraints: const BoxConstraints(

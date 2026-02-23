@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/core/styles/app_colors.dart';
 
 class CustomBackButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -11,7 +12,7 @@ class CustomBackButton extends StatelessWidget {
       width: 45,
       height: 45,
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: AppColors.iceBlue,
         shape: BoxShape.circle,
       ),
       child: IconButton(

@@ -7,4 +7,5 @@ class AppColors {
   static const Color imageBackground = Color(0xFF98A8B8);
   static const Color describtion = Color(0xFFA0A5BA);
   static const Color ingridents = Color(0xFFFFEBE4);
+  static const Color iceBlue = Color(0xFFF0F5FA);
 }

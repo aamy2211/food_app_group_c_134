@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/styles/app_colors.dart';
-import 'package:food_app/core/utils/app_icons.dart';
+import 'package:food_app/core/utils/app_images.dart';
+import 'package:food_app/core/widgets/icon_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 Column buildRestaurantItem() => Column(
   children: [
@@ -13,31 +15,25 @@ Column buildRestaurantItem() => Column(
             width: 70,
             height: 57,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(15.r),
               color: AppColors.describtion,
             ),
           ),
         ),
-        SizedBox(width: 10),
+        SizedBox(width: 10.w),
         Column(
           children: [
-            Text("Pansi Restaurant", style: TextStyle(fontSize: 16)),
-            // يا بولا، بدل ما تبني صف التقييم يدوي كدة، استخدم ويدجت IconText اللي عملناها في الـ RestaurantCard عشان نوحد الشكل والخطوط
+            Text("Pansi Restaurant", style: TextStyle(fontSize: 16.sp)),
             Padding(
-              padding: const EdgeInsets.only(right: 100),
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    AppIcons.star,
-                    width: 15,
-                    height: 15,
-                    colorFilter: ColorFilter.mode(
-                      AppColors.primary,
-                      BlendMode.srcIn,
-                    ),
-                  ),
-                  Text("4.7"),
-                ],
+              padding: EdgeInsets.only(right: 100.w),
+              child: IconText(
+                iconPath: AppImages.star,
+                text: "4.7",
+                textStyle: GoogleFonts.sen(
+                  color: const Color(0xFF181C2E),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

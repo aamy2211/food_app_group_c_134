@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/core/widgets/custom_badge_button.dart';
-import 'package:food_app/core/widgets/custom_text_field.dart';
+
 import 'package:food_app/core/widgets/search_field.dart';
+
 import 'package:food_app/features/search/widgets/PopularFoodList/popular_food_list.dart';
 import 'package:food_app/features/search/widgets/RecentKeywordsList/recent_keywords_list.dart';
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/suggested_restaurants_list.dart';
@@ -24,25 +26,24 @@ class SearchScreen extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 24, top: 30),
-                    // يا بولا، اهتم بتوحيد المسافات واستخدام الـ ScreenUtil عشان التصميم يكون ريسبونسيف على كل الشاشات
+                    padding: EdgeInsets.only(left: 24.w, top: 30.h),
                     child: Container(
-                      width: 45,
-                      height: 45,
+                      width: 45.w,
+                      height: 45.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(40.r),
                         color: AppColors.ingridents,
                       ),
                       child: CustomBackButton(),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 16, top: 30),
-                    child: Text("Search", style: TextStyle(fontSize: 17)),
+                    padding: EdgeInsets.only(left: 16.w, top: 30.h),
+                    child: Text("Search", style: TextStyle(fontSize: 17.sp)),
                   ),
-                  SizedBox(width: 125),
+                  Spacer(),
                   Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                    padding: EdgeInsets.only(top: 20.h, right: 15.w),
                     child: CustomBadgeButton(
                       iconPath: AppImages.shoppingBag,
                       itemCount: 2, // Matches Figma design count
@@ -54,11 +55,11 @@ class SearchScreen extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(24),
+                padding: EdgeInsets.all(24.r),
                 child: SearchField(
                   hintText: 'Search dishes, restaurants',
                   suffixIcon: Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20.r),
                     child: SvgPicture.asset("assets/icons/close.svg"),
                   ),
                   onTap: () {
@@ -68,29 +69,35 @@ class SearchScreen extends StatelessWidget {
               ),
 
               Padding(
-                padding: const EdgeInsets.only(left: 24),
+                padding: EdgeInsets.only(left: 24.w),
                 child: Text(
                   "Recent Keywords",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               RecentKeywordsList(),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Padding(
-                padding: const EdgeInsets.only(left: 24),
+                padding: EdgeInsets.only(left: 24.w),
                 child: Text(
                   "Suggested Restaurants",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
 
               SuggestedRestaurantsList(),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: EdgeInsets.only(left: 20.w),
                 child: Text(
                   "Popular Fast food",
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20.sp),
                 ),
               ),
               PopularFoodList(),
@@ -100,9 +107,4 @@ class SearchScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-// يا بولا، احنا عندنا سيستم نافيجيشن جاهز في المشروع، يفضل تستخدمه بدل ما تعمل فانكشن مكررة زي دي
-void pushTo(BuildContext context, Widget view) {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => view));
 }
