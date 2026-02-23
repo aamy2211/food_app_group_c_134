@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/core/functions/navigations.dart';
+import 'package:food_app/features/search/search_screen.dart' hide pushTo;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/utils/app_images.dart';
@@ -86,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                   hintText: 'Search dishes, restaurants',
                   readOnly: true,
                   onTap: () {
-                    // TODO: Navigate to Search Screen
+                    pushTo(context, SearchScreen());
                   },
                 ),
 
