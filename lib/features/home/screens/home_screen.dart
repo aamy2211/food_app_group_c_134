@@ -21,7 +21,10 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24.0,
+              vertical: 16.0,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -35,16 +38,17 @@ class HomeScreen extends StatelessWidget {
                         // TODO: Open Drawer or Menu
                       },
                     ),
-                    
-                    const SizedBox(width: 4), // 4 pixels left padding to perfectly align text starting at (X = 48)
-                    
+
+                    const SizedBox(
+                      width: 4,
+                    ), // 4 pixels left padding to perfectly align text starting at (X = 48)
                     // Location
                     const Expanded(
                       child: LocationHeaderDropdown(
                         selectedLocation: 'Halal Lab office',
                       ),
                     ),
-                    
+
                     // Cart Icon
                     CustomBadgeButton(
                       iconPath: AppImages.shoppingBag,
@@ -55,9 +59,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                
+
                 const SizedBox(height: 24),
-                
+
                 // Greeting text
                 Text.rich(
                   TextSpan(
@@ -69,16 +73,14 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: 'Good Afternoon!',
-                        style: GoogleFonts.sen(
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: GoogleFonts.sen(fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Search Bar Placeholder
                 SearchField(
                   hintText: 'Search dishes, restaurants',
@@ -87,9 +89,9 @@ class HomeScreen extends StatelessWidget {
                     // TODO: Navigate to Search Screen
                   },
                 ),
-                
+
                 const SizedBox(height: 24),
-                
+
                 // All Categories Header
                 SectionHeader(
                   title: 'All Categories',
@@ -97,16 +99,16 @@ class HomeScreen extends StatelessWidget {
                     // TODO: Navigate to All Categories view
                   },
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Categories List (Horizontal Scroll)
                 const CategoryList(
                   categories: ['Pizza', 'Burger', 'Hotdog', 'Pizza'],
                 ),
-                
+
                 const SizedBox(height: 24),
-                
+
                 // Open Restaurants Header
                 SectionHeader(
                   title: 'Open Restaurants',
@@ -114,9 +116,9 @@ class HomeScreen extends StatelessWidget {
                     // TODO: Navigate to All Restaurants view
                   },
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Open Restaurants Card
                 const RestaurantCard(
                   imageUrl: '', // Placeholder for now
@@ -126,9 +128,9 @@ class HomeScreen extends StatelessWidget {
                   deliveryFee: 'Free',
                   deliveryTime: '20 min',
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // Second Restaurant Card
                 const RestaurantCard(
                   imageUrl: '', // Placeholder for now
@@ -138,8 +140,8 @@ class HomeScreen extends StatelessWidget {
                   deliveryFee: 'Free',
                   deliveryTime: '15 min',
                 ),
-                
-                const SizedBox(height: 24), 
+
+                const SizedBox(height: 24),
               ],
             ),
           ),

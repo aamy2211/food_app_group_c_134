@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 class CustomBackButton extends StatelessWidget {
   final VoidCallback? onPressed;
 
-  const CustomBackButton({
-    super.key,
-    this.onPressed,
-  });
+  const CustomBackButton({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +20,13 @@ class CustomBackButton extends StatelessWidget {
           color: Colors.black,
           size: 20,
         ),
-        onPressed: onPressed ?? () {
-          if (Navigator.canPop(context)) {
-            Navigator.pop(context);
-          }
-        },
+        onPressed:
+            onPressed ??
+            () {
+              if (Navigator.canPop(context)) {
+                Navigator.pop(context);
+              }
+            },
       ),
     );
   }

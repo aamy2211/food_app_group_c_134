@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
-import 'package:food_app/core/utils/app_icons.dart';
+import 'package:food_app/core/utils/app_images.dart';
+import 'package:food_app/core/widgets/custom_back_button.dart';
+import 'package:food_app/core/widgets/custom_text_field.dart';
 import 'package:food_app/features/search/widgets/PopularFoodList/popular_food_list.dart';
 import 'package:food_app/features/search/widgets/RecentKeywordsList/recent_keywords_list.dart';
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/suggested_restaurants_list.dart';
@@ -28,12 +30,7 @@ class SearchScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(40),
                         color: AppColors.ingridents,
                       ),
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: SvgPicture.asset(AppIcons.back),
-                      ),
+                      child: CustomBackButton(),
                     ),
                   ),
                   Padding(
@@ -54,7 +51,7 @@ class SearchScreen extends StatelessWidget {
                           ),
                           child: IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset(AppIcons.onion),
+                            icon: SvgPicture.asset(AppImages.shoppingBag),
                           ),
                         ),
                       ),
@@ -81,22 +78,10 @@ class SearchScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(24),
-                child: CustomTextFormField(
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: SvgPicture.asset(
-                      AppIcons.search,
-                      colorFilter: ColorFilter.mode(
-                        AppColors.describtion,
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ),
-                  suffix: GestureDetector(
-                    onTap: () {},
-                    child: SvgPicture.asset(AppIcons.cross),
-                  ),
-                  hintText: 'search',
+                child: CustomTextField(
+                  hint: 'Search',
+                  label: '',
+                  suffixIcon: SvgPicture.asset("assets/icons/close.svg"),
                 ),
               ),
 
@@ -130,44 +115,6 @@ class SearchScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    super.key,
-    this.prefixIcon,
-    this.suffix,
-    required this.hintText,
-    this.readOnly = false,
-    this.onTap,
-  });
-  final Widget? prefixIcon;
-  final Widget? suffix;
-  final String hintText;
-  final bool readOnly;
-  final Function()? onTap;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: TextFormField(
-        readOnly: readOnly,
-        decoration: InputDecoration(
-          fillColor: AppColors.ingridents,
-          filled: true,
-          border: OutlineInputBorder(
-            borderSide: BorderSide.none,
-
-            borderRadius: BorderRadius.circular(15),
-          ),
-          prefixIcon: prefixIcon,
-          suffix: suffix,
-          hintText: hintText,
-          hintStyle: TextStyle(color: AppColors.describtion),
-        ),
-        onTap: onTap,
       ),
     );
   }
