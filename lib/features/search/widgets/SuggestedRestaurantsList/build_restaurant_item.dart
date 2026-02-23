@@ -5,6 +5,7 @@ import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/icon_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// مجهود ممتاز يا بولا واستجابتك سريعة جداً في تنفيذ التعديلات. تسلم إيدك.
 Column buildRestaurantItem() => Column(
   children: [
     Row(

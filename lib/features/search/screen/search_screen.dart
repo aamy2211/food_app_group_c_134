@@ -13,6 +13,7 @@ import 'package:food_app/features/search/widgets/RecentKeywordsList/recent_keywo
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/suggested_restaurants_list.dart';
 
 class SearchScreen extends StatelessWidget {
+  // برافو يا بولا، مجهود ممتاز واستجابتك سريعة جداً وفعالة في تنفيذ التعديلات المطلوبة. تسلم إيدك.
   const SearchScreen({super.key});
 
   @override

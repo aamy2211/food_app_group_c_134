@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 
+// برافو يا بولا، تنفيذك للـ ScreenUtil والتعديلات ممتاز جداً وفي وقت قياسي.
 Stack buildFoodItem() => Stack(
   children: [
     Padding(
