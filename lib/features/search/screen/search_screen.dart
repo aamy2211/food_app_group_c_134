@@ -13,22 +13,12 @@ import 'package:food_app/features/search/widgets/RecentKeywordsList/recent_keywo
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/suggested_restaurants_list.dart';
 
 class SearchScreen extends StatelessWidget {
-  // برافو يا بولا، مجهود ممتاز واستجابتك سريعة جداً وفعالة في تنفيذ التعديلات المطلوبة. تسلم إيدك.
   const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        /*
-          يا بولا، برافو على المجهود، بس عشان نوحد الكود في المشروع كله، استخدم ملف (navigations.dart) 
-          اللي في الـ core. هتلاقي فيه دوال جاهزة زي:
-          - pushTo(context, YourScreen()) -> عشان تفتح صفحة جديدة
-          - pop(context) -> عشان ترجع لورا
-          - pushReplacementTo(context, YourScreen()) -> لو عايز تقفل الصفحة الحالية وتفتح واحدة جديدة
-          
-          جرب تستخدمهم بدل Navigator.push العادية عشان الكود يبقى أنظف وأسهل في التعديل بعدين.
-        */
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +27,6 @@ class SearchScreen extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(left: 24.w, top: 30.h),
-                    // تسلم إيدك يا بولا انك استخدمت الـ ScreenUtil، كدة التصميم بقى ريسبونسيف وممتاز
                     child: Container(
                       width: 45.w,
                       height: 45.h,

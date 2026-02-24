@@ -5,7 +5,6 @@ import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/icon_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// مجهود ممتاز يا بولا واستجابتك سريعة جداً في تنفيذ التعديلات. تسلم إيدك.
 Column buildRestaurantItem() => Column(
   children: [
     Row(
@@ -25,8 +24,6 @@ Column buildRestaurantItem() => Column(
         Column(
           children: [
             Text("Pansi Restaurant", style: TextStyle(fontSize: 16.sp)),
-            // تمام جداً انك استخدمت الـ IconText هنا يا بولا. 
-            // حاول بس تظبط الـ Padding اليمين واليسار عشان يكونوا متناسقين مع الهيدر اللي فوق
             Padding(
               padding: EdgeInsets.only(right: 100.w),
               child: IconText(
