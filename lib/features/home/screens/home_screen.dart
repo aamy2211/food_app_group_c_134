@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/core/functions/navigations.dart';
-import 'package:food_app/features/search/screen/search_screen.dart'  hide pushTo;
+import 'package:food_app/features/burger/screens/burger_screen.dart';
+import 'package:food_app/features/search/screen/search_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/search_field.dart';
@@ -103,8 +104,13 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 16),
 
                 // Categories List (Horizontal Scroll)
-                const CategoryList(
-                  categories: ['Pizza', 'Burger', 'Hotdog', 'Pizza'],
+                CategoryList(
+                  categories: const ['Pizza', 'Burger', 'Hotdog', 'Pizza'],
+                  onCategoryTap: (category) {
+                    if (category == 'Burger') {
+                      pushTo(context, const BurgersScreen());
+                    }
+                  },
                 ),
 
                 const SizedBox(height: 24),

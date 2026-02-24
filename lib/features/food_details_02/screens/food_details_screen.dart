@@ -54,16 +54,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        // يا عراقي، هنا استبدل الـ ContainerButton بـ CustomBackButton اللي احنا عاملينه عشان نوحد التصميم
                         CustomBackButton(backgroundColor: AppColors.greyLite),
-                        // ContainerButton(
-                        //   color: AppColors.greyLite,
-                        //   child: Icon(Icons.arrow_back_ios),
-                        //   ontap: () {
-                        //     pop(context);
-                        //   },
-                        // ),
-                        // يا عراقي، زر المفضلة محتاج يكون بخلفية بيضاء وأيقونة قلب برتقالية (AppIcons.heart) زي اللي في التصميم
                         ContainerButton(
                           color: AppColors.greyLite,
                           child: Icon(Icons.favorite, color: AppColors.primary),
@@ -89,7 +80,6 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       ],
                     ),
                     SizedBox(height: 20),
-                    // استخدم ويدجت IconText هنا يا عراقي للأيقونات دي (التقييم، التوصيل، الوقت) بدل ProductAtrributes عشان نوحد الشكل
                     Row(
                       spacing: 60,
                       children: [
@@ -115,7 +105,6 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           ),
                         ),
                         SizedBox(width: 10),
-                        // يا عراقي، في الـ SizeSelector اتأكد ان المقاس المختار (زي 14") واخد خلفية برتقالية دائرية والباقي رمادي فاتح
                         SizeSelector(),
                       ],
                     ),
@@ -125,7 +114,6 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     Row(
                       spacing: 33,
                       children: [
-                        // يا عراقي، المكونات محتاجة خلفية دائرية  بلون فاتح (Tinted) مش بس الأيقونة، زي ما في التصميم
                         Ingridents(icon: AppIcons.salt),
                         Ingridents(icon: AppIcons.chicken),
                         Ingridents(icon: AppIcons.onion),
@@ -141,8 +129,6 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
           ),
         ),
       ),
-      // الجزء اللي تحت ده (bottomNavigationBar) محتاج شغل كتير يا عراقي عشان يطابق الصورة
-      // محتاجين السعر على الشمال، والـ Quantity Selector على اليمين، وتحتهم زر ADD TO CART البرتقالي العريض
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 30),
         height: 200,

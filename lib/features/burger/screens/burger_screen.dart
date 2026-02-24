@@ -1,10 +1,12 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/burger_card.dart';
 import 'package:food_app/core/widgets/section_header.dart';
+import 'package:food_app/features/food_details_02/screens/food_details_screen.dart';
 import 'package:food_app/features/burger/widgets/build_header.dart';
 import 'package:food_app/features/burger/widgets/restaurant_card.dart';
 
@@ -44,6 +46,7 @@ class BurgersScreen extends StatelessWidget {
                     title: "Burger Bistro",
                     subtitle: "Rose Garden",
                     price: "\$40",
+                    onTap: () => pushTo(context, const FoodDetailsScreen()),
                   ),
                   BurgerCard(
                     context: context,
@@ -51,6 +54,7 @@ class BurgersScreen extends StatelessWidget {
                     title: "Smokin' Burger",
                     subtitle: "Cafenio Restaurant",
                     price: "\$60",
+                    onTap: () => pushTo(context, const FoodDetailsScreen()),
                   ),
                   BurgerCard(
                     context: context,
@@ -58,6 +62,7 @@ class BurgersScreen extends StatelessWidget {
                     title: "Buffalo Burgers",
                     subtitle: "Kaji Firm Kitchen",
                     price: "\$75",
+                    onTap: () => pushTo(context, const FoodDetailsScreen()),
                   ),
                   BurgerCard(
                     context: context,
@@ -65,6 +70,7 @@ class BurgersScreen extends StatelessWidget {
                     title: "Bullseye Burgers",
                     subtitle: "Kabab Restaurant",
                     price: "\$94",
+                    onTap: () => pushTo(context, const FoodDetailsScreen()),
                   ),
                 ],
               ),

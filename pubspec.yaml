@@ -19,6 +19,8 @@ dependencies:
   google_fonts: ^8.0.2
   group_button: ^5.3.4
   flutter_otp_text_field: ^1.5.1+1
+  carousel_slider: ^5.1.2
+  smooth_page_indicator: ^2.0.1
   
 
 dev_dependencies:
