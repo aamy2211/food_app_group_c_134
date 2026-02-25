@@ -75,7 +75,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                   children: [
                     Text('Burger Bistro', style: TextStyles.body),
                     GestureDetector(
-                      onTap: () => pushTo(context, RestaurantScreen()),
+                      onTap: () => pushTo(context, const RestaurantScreen()),
                       child: Row(
                         children: [
                           Image.asset(

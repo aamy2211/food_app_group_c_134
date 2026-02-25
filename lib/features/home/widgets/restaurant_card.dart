@@ -28,7 +28,7 @@ class RestaurantCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap: onTap ?? () {
         pushTo(context, const RestaurantScreen());
       },
       child: Container(

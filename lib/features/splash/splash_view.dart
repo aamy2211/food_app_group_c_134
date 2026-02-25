@@ -18,7 +18,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      pushReplacementTo(context, LoginEmptyScreen());
+      pushReplacementTo(context, const LoginEmptyScreen());
       // الانتقال للصفحة التالية بعد الميتينج
     });
   }

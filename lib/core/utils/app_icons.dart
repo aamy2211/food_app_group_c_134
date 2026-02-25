@@ -45,6 +45,7 @@ abstract class AppIcons {
   static const String logo2 = 'assets/icons/logo2.svg';
   static const String topLogo = 'assets/icons/topLogo.svg';
   static const String resturantLogo = 'assets/icons/resturantLogo.svg';
+  static const String ellipse1295 = 'assets/icons/ellipse1295.svg';
   static const String chicken = 'assets/icons/Chicken.svg';
   static const String onion = 'assets/icons/onion.svg';
   static const String salt = 'assets/icons/salt.svg';
@@ -52,7 +53,7 @@ abstract class AppIcons {
   static const String thom = 'assets/icons/thom.svg';
   static const String foodLogo = 'assets/icons/foodLogo.svg';
   static const String blackArrow = 'assets/icons/blackArrow.svg';
-  static const String chefLogo = 'assets/icons/2.png';
+  static const String chefLogo = 'assets/icons/restaurant_logo.png';
   static const String cancel = 'assets/icons/cancel.svg';
   static const String cash = 'assets/icons/cash.svg';
   static const String visa = 'assets/icons/visa.svg';
