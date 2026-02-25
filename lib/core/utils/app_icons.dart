@@ -45,6 +45,7 @@ abstract class AppIcons {
   static const String logo2 = 'assets/icons/logo2.svg';
   static const String topLogo = 'assets/icons/topLogo.svg';
   static const String resturantLogo = 'assets/icons/resturantLogo.svg';
+  static const String ellipse1295 = 'assets/icons/ellipse1295.svg';
   static const String chicken = 'assets/icons/Chicken.svg';
   static const String onion = 'assets/icons/onion.svg';
   static const String salt = 'assets/icons/salt.svg';

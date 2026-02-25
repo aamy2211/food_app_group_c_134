@@ -74,8 +74,12 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     Text('Burger Bistro', style: TextStyles.body),
                     Row(
                       children: [
-                        SvgPicture.asset(AppIcons.resturantLogo),
-                        SizedBox(width: 20),
+                        Image.asset(
+                          'assets/icons/restaurant_logo.png',
+                          width: 22,
+                          height: 22,
+                        ),
+                        SizedBox(width: 4),
                         Text('Rose Garden', style: TextStyles.caption),
                       ],
                     ),

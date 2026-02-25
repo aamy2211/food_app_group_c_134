@@ -19,8 +19,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      pushReplacementTo(context, FoodDetailsScreen());
-      // الانتقال للصفحة التالية بعد الميتينج
+      pushReplacementTo(context, const LoginEmptyScreen());
     });
   }
 

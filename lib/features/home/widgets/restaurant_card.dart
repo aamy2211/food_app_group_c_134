@@ -10,6 +10,7 @@ class RestaurantCard extends StatelessWidget {
   final String rating;
   final String deliveryFee;
   final String deliveryTime;
+  final VoidCallback? onTap;
 
   const RestaurantCard({
     super.key,
@@ -19,16 +20,19 @@ class RestaurantCard extends StatelessWidget {
     required this.rating,
     required this.deliveryFee,
     required this.deliveryTime,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(24),
-      ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(24),
+        ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -100,6 +104,7 @@ class RestaurantCard extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ),
+   );
   }
 }
