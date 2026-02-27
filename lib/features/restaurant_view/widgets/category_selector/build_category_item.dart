@@ -29,7 +29,7 @@ class BuildCategoryItem extends StatelessWidget {
           color: isSelected ? AppColors.primary : AppColors.white,
           boxShadow: [
              BoxShadow(
-               color: AppColors.describtion.withOpacity(0.3), 
+               color: AppColors.describtion.withValues(alpha: 0.3), 
                blurRadius: 3,
                offset: Offset(0, 2.h),
              )

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:food_app/features/restaurant_view/widgets/category_selector/build_Category_Item.dart';
+import 'package:food_app/features/restaurant_view/widgets/category_selector/build_category_item.dart';
 import 'package:food_app/features/search/data/product_model.dart';
 
 class CategorySelector extends StatefulWidget {

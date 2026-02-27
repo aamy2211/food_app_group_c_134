@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/core/styles/app_colors.dart';
 
 class QuantityCounter extends StatefulWidget {
   const QuantityCounter({super.key});
@@ -13,15 +15,14 @@ class _QuantityCounterState extends State<QuantityCounter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(20),
+        color: AppColors.white.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // زرار -
           _buildButton(
             icon: Icons.remove,
             onTap: () {
@@ -32,22 +33,16 @@ class _QuantityCounterState extends State<QuantityCounter> {
               }
             },
           ),
-
-          const SizedBox(width: 12),
-
-          // الرقم
+          SizedBox(width: 12.w),
           Text(
             quantity.toString(),
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: 16.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
-
-          const SizedBox(width: 12),
-
-          // زرار +
+          SizedBox(width: 12.w),
           _buildButton(
             icon: Icons.add,
             onTap: () {
@@ -68,16 +63,16 @@ class _QuantityCounterState extends State<QuantityCounter> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 28,
-        height: 28,
-        decoration: const BoxDecoration(
+        width: 28.w,
+        height: 28.h,
+        decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.white24,
+          color: AppColors.white.withValues(alpha: 0.24),
         ),
         child: Icon(
           icon,
-          size: 16,
-          color: Colors.white,
+          size: 16.sp,
+          color: AppColors.white,
         ),
       ),
     );

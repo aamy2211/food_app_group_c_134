@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:food_app/features/search/data/product_model.dart';
 import 'package:food_app/features/search/widgets/RecentKeywordsList/build_keyword_chip.dart';
 
-class RecentKeywordsList extends StatelessWidget {
+class RecentKeywordsList extends StatefulWidget {
   const RecentKeywordsList({super.key});
+
+  @override
+  State<RecentKeywordsList> createState() => _RecentKeywordsListState();
+}
+
+class _RecentKeywordsListState extends State<RecentKeywordsList> {
+  int? selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +24,15 @@ class RecentKeywordsList extends StatelessWidget {
         itemBuilder: (context, index) {
           var model = recentKeywords[index];
 
-          return BuildKeywordChip(model: model);
+          return BuildKeywordChip(
+            model: model,
+            isSelected: selectedIndex == index,
+            onTap: () {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+          );
         },
       ),
     );

@@ -52,6 +52,6 @@ abstract class AppIcons {
   static const String thom = 'assets/icons/thom.svg';
   static const String foodLogo = 'assets/icons/foodLogo.svg';
   static const String blackArrow = 'assets/icons/blackArrow.svg';
-  static const String chef_logo = 'assets/icons/2.png';
+  static const String chefLogo = 'assets/icons/2.png';
   static const String cancel = 'assets/icons/cancel.svg';
 }

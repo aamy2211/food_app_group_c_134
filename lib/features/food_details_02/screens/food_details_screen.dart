@@ -9,10 +9,8 @@ import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
-import 'package:food_app/core/widgets/icon_text.dart';
 import 'package:food_app/features/cart/screens/cart_screen.dart';
 import 'package:food_app/features/food_details_02/widgets/ingridents.dart';
-import 'package:food_app/features/food_details_02/widgets/product_atrributes.dart';
 import 'package:food_app/features/food_details_02/widgets/product_counter.dart';
 import 'package:food_app/features/food_details_02/widgets/radio_button.dart';
 import 'package:food_app/features/restaurant_view/screen/restaurant_screen.dart';
@@ -80,8 +78,8 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       onTap: () => pushTo(context, RestaurantScreen()),
                       child: Row(
                         children: [
-                          SvgPicture.asset(
-                            AppIcons.resturantLogo,
+                          Image.asset(
+                            AppIcons.chefLogo,
                             width: 22.w,
                             height: 22.h,
                           ),
@@ -94,7 +92,6 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           ),
                         ],
                       ),
-                    ),
                     ),
                     SizedBox(height: 20),
                     RestaurantInfoRow(),
@@ -121,15 +118,18 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     SizedBox(height: 30),
                     Text('INGRIDENTS'),
                     SizedBox(height: 30),
-                    Row(
-                      spacing: 33,
-                      children: [
-                        Ingridents(icon: AppIcons.salt),
-                        Ingridents(icon: AppIcons.chicken),
-                        Ingridents(icon: AppIcons.onion),
-                        Ingridents(icon: AppIcons.thom),
-                        Ingridents(icon: AppIcons.papper),
-                      ],
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        spacing: 33,
+                        children: [
+                          Ingridents(icon: AppIcons.salt),
+                          Ingridents(icon: AppIcons.chicken),
+                          Ingridents(icon: AppIcons.onion),
+                          Ingridents(icon: AppIcons.thom),
+                          Ingridents(icon: AppIcons.papper),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 30),
                   ],

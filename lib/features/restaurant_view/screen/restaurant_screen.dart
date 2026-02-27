@@ -112,7 +112,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
               ].map((image) {
                 return ClipRRect(
                   borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(25),
+                    bottom: Radius.circular(25.r),
                   ),
                   child: Image.asset(
                     image,
@@ -139,8 +139,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
               activeIndex: activeIndex,
               count: 5,
               effect: WormEffect(
-                dotHeight: 8,
-                dotWidth: 8,
+                dotHeight: 8.h,
+                dotWidth: 8.w,
                 activeDotColor: AppColors.white,
                 dotColor: AppColors.imageBackground,
               ),

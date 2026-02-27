@@ -5,8 +5,6 @@ import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 
 import 'package:food_app/features/auth/screens/login_empty_screen.dart';
-import 'package:food_app/features/auth/screens/login_type_screen.dart';
-import 'package:food_app/features/food_details_02/screens/food_details_screen.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

@@ -1,77 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/core/styles/app_colors.dart';
+import 'package:food_app/core/styles/text_styles.dart';
 
 class ProductCounter extends StatefulWidget {
+  const ProductCounter({super.key});
+
   @override
-  _ProductCounterState createState() => _ProductCounterState();
+  State<ProductCounter> createState() => _ProductCounterState();
 }
 
 class _ProductCounterState extends State<ProductCounter> {
-  int count = 1; // القيمة الابتدائية
+  int count = 1;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: Color(0xFF1A1D26), // لون الخلفية الغامق من الصورة
-        borderRadius: BorderRadius.circular(30), // لجعل الأطراف دائرية تماماً
+        color: AppColors.secondary, // Match dark background
+        borderRadius: BorderRadius.circular(30.r),
       ),
       child: Row(
-        mainAxisSize:
-            MainAxisSize.min, // عشان الكونتر ياخد مساحة على قد محتواه بس
+        mainAxisSize: MainAxisSize.min,
         children: [
-          // زر الناقص
-          IconButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                Color.fromARGB(255, 82, 82, 82),
-              ), // نفس لون الخلفية
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30), // لجعل الزر دائري
-                ),
-              ),
-            ),
-            onPressed: () {
+          _buildButton(
+            icon: Icons.remove,
+            onTap: () {
               if (count > 1) setState(() => count--);
             },
-            icon: Icon(Icons.remove, color: Colors.white, size: 20),
-            constraints:
-                BoxConstraints(), // لإزالة المساحات الإضافية حول الأيقونة
-            padding: EdgeInsets.all(8),
           ),
-
-          // الرقم
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
             child: Text(
               '$count',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
+              style: TextStyles.body.copyWith(
+                color: AppColors.white,
+                fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-
-          // زر الزائد
-          IconButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                Color.fromARGB(255, 82, 82, 82),
-              ), // نفس لون الخلفية
-              shape: MaterialStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30), // لجعل الزر دائري
-                ),
-              ),
-            ),
-            onPressed: () => setState(() => count++),
-            icon: Icon(Icons.add, color: Colors.white, size: 20),
-            constraints: BoxConstraints(),
-            padding: EdgeInsets.all(8),
+          _buildButton(
+            icon: Icons.add,
+            onTap: () => setState(() => count++),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildButton({required IconData icon, required VoidCallback onTap}) {
+    return Container(
+      width: 36.w,
+      height: 36.h,
+      decoration: BoxDecoration(
+        color: const Color(0xFF525252),
+        shape: BoxShape.circle,
+      ),
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        onPressed: onTap,
+        icon: Icon(icon, color: AppColors.white, size: 20.sp),
       ),
     );
   }

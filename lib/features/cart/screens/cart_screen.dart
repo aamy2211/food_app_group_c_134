@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
@@ -19,160 +20,160 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.secondary,
-      body: Center(
-        child: Stack(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 0.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          spacing: 20,
-                          children: [
-                            Container(
-                              width: 45,
-                              height: 45,
-                              decoration: BoxDecoration(
-                                color: AppColors.lightGrey, // خلفية بيضاء
-                                borderRadius: BorderRadius.circular(
-                                  50,
-                                ), // زوايا دائرية
-                              ),
-                              child: IconButton(
-                                icon: Icon(
-                                  Icons.arrow_back_ios_new,
-                                  color: AppColors.white,
-                                ), // أيقونة العودة باللون الأساسي
-                                onPressed: () {
-                                  pop(context);
-                                },
-                              ),
+      body: Stack(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(25.w, 50.h, 25.w, 0.h),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: 45.w,
+                            height: 45.h,
+                            decoration: BoxDecoration(
+                              color: AppColors.lightGrey,
+                              borderRadius: BorderRadius.circular(50.r),
                             ),
-                            Text(
-                              'Cart',
-                              style: TextStyle(
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.arrow_back_ios_new,
                                 color: AppColors.white,
-                                fontSize: 20,
+                                size: 18.sp,
                               ),
-                            ),
-                          ],
-                        ),
-                        TextButton(
-                          child: Text(
-                            'DONE',
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: AppColors.green,
+                              onPressed: () {
+                                pop(context);
+                              },
                             ),
                           ),
-                          onPressed: () {},
+                          SizedBox(width: 20.w),
+                          Text(
+                            'Cart',
+                            style: TextStyles.body.copyWith(
+                              color: AppColors.white,
+                              fontSize: 20.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                      TextButton(
+                        child: Text(
+                          'DONE',
+                          style: TextStyles.caption.copyWith(
+                            decoration: TextDecoration.underline,
+                            color: AppColors.green,
+                          ),
                         ),
-                      ],
-                    ),
-                    SizedBox(height: 24),
-                    ProductVerticalCard(
-                      title: 'Pizza Calzone\n European',
-                      price: '52.33',
-                      size: '14',
-                    ),
-                    SizedBox(height: 30),
-                    ProductVerticalCard(
-                      title: 'Pizza Calzone\n European',
-                      price: '32.33',
-                      size: '16',
-                    ),
-                  ],
-                ),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 24.h),
+                  const ProductVerticalCard(
+                    title: 'Pizza Calzone\n European',
+                    price: '52.33',
+                    size: '14',
+                  ),
+                  SizedBox(height: 30.h),
+                  const ProductVerticalCard(
+                    title: 'Pizza Calzone\n European',
+                    price: '32.33',
+                    size: '16',
+                  ),
+                  SizedBox(height: 350.h), // Space for bottom sheet
+                ],
               ),
             ),
-            Container(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: double.infinity,
-                height: 320,
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
-                decoration: BoxDecoration(
-                  color: AppColors.white, // خلفية بيضاء
-                  borderRadius: BorderRadius.circular(30), // زوايا دائرية
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'DELIVERY ADDRESS',
-                          style: TextStyles.captionB.copyWith(
-                            color: AppColors.imageBackground,
-                          ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: double.infinity,
+              height: 320.h,
+              padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'DELIVERY ADDRESS',
+                        style: TextStyles.captionB.copyWith(
+                          color: AppColors.imageBackground,
                         ),
-                        Text(
-                          'EDIT',
-                          style: TextStyles.caption.copyWith(
-                            color: AppColors.primary,
-                          ),
+                      ),
+                      Text(
+                        'EDIT',
+                        style: TextStyles.caption.copyWith(
+                          color: AppColors.primary,
                         ),
-                      ],
-                    ),
-
-                    CustomTextField(
-                      label: '',
-                      hint: 'Enter your delivery address',
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      children: [
-                        Row(
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10.h),
+                  const CustomTextField(
+                    label: '',
+                    hint: 'Enter your delivery address',
+                  ),
+                  SizedBox(height: 20.h),
+                  Row(
+                    children: [
+                      Text(
+                        'TOTAL :',
+                        style: TextStyles.captionB.copyWith(
+                          color: AppColors.imageBackground,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Text(
+                        '\$84.66',
+                        style: TextStyles.body.copyWith(
+                          color: AppColors.secondary,
+                        ),
+                      ),
+                      const Spacer(),
+                      TextButton(
+                        child: Row(
                           children: [
                             Text(
-                              'TOTAL :',
-                              style: TextStyles.captionB.copyWith(
-                                color: AppColors.imageBackground,
+                              'Breakdown',
+                              style: TextStyles.caption.copyWith(
+                                color: AppColors.primary,
                               ),
                             ),
-                            SizedBox(width: 8),
+                            SizedBox(width: 4.w),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 12.sp,
+                              color: AppColors.imageBackground,
+                            ),
                           ],
                         ),
-                        Text(
-                          '\$84.66',
-                          style: TextStyles.body.copyWith(
-                            color: AppColors.secondary,
-                          ),
-                        ),
-                        SizedBox(width: 118),
-                        TextButton(
-                          child: Row(
-                            children: [
-                              Text(
-                                'Breakdown',
-                                style: TextStyles.caption.copyWith(
-                                  color: AppColors.primary,
-                                ),
-                              ),
-                            ],
-                          ),
-                          onPressed: () {},
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-                    CustomButton(
-                      text: 'CHECK OUT',
-                      onPressed: () {
-                        pushTo(context, PaymentScreen());
-                      },
-                    ),
-                  ],
-                ),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20.h),
+                  CustomButton(
+                    text: 'CHECK OUT',
+                    onPressed: () {
+                      pushTo(context, const PaymentScreen());
+                    },
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

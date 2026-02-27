@@ -16,13 +16,13 @@ class BuildHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CustomBackButton(backgroundColor: Colors.blueGrey.withOpacity(0.1)),
+        CustomBackButton(backgroundColor: Colors.blueGrey.withValues(alpha: 0.1)),
         const SizedBox(width: 15),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.describtion.withOpacity(0.3)),
+            border: Border.all(color: AppColors.describtion.withValues(alpha: 0.3)),
           ),
           child: Row(
             children: [
@@ -41,9 +41,7 @@ class BuildHeader extends StatelessWidget {
         const SizedBox(width: 10),
         CircularIconButton(
           iconPath: AppIcons.filter,
-          backgroundColor: AppColors.describtion.withOpacity(
-            0.1,
-          ), // خلفية داكنة
+          backgroundColor: AppColors.describtion.withValues(alpha: 0.1),
           // iconColor: AppColors.secondary, // لون أيقونة أبيض
           iconSize: 30, // حجم أصغر شوية ليناسب التصميم
           onPressed: () {

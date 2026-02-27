@@ -32,7 +32,7 @@ class BurgerCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
+              color: Colors.grey.withValues(alpha: 0.1),
               spreadRadius: 2,
               blurRadius: 10,
             ),
@@ -45,7 +45,7 @@ class BurgerCard extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.blueGrey.withOpacity(0.2), // مكان الصورة الرمادي
+                  color: Colors.blueGrey.withValues(alpha: 0.2), // مكان الصورة الرمادي
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: ClipRRect(

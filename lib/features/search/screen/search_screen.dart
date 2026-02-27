@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/core/widgets/custom_badge_button.dart';
 
 import 'package:food_app/core/widgets/search_field.dart';
-import 'package:food_app/features/burger/screens/burger_screen.dart';
-
 import 'package:food_app/features/search/widgets/PopularFoodList/popular_food_list.dart';
 import 'package:food_app/features/search/widgets/RecentKeywordsList/recent_keywords_list.dart';
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/suggested_restaurants_list.dart';
