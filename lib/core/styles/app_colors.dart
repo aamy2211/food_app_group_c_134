@@ -9,4 +9,6 @@ class AppColors {
   static const Color ingridents = Color(0xFFFFEBE4);
   static const Color iceBlue = Color(0xFFF0F5FA);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color green = Color(0xFF059C6A);
+  static const Color lightGrey = Color.fromARGB(54, 184, 184, 184);
 }
