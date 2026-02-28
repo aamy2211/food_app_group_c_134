@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
+import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
-// import 'package:food_app/core/styles/app_colors.dart';
-import 'package:food_app/core/widgets/custom_button.dart';
 import 'package:food_app/core/utils/app_images.dart';
+import 'package:food_app/core/widgets/custom_button.dart';
 import 'package:food_app/core/widgets/custom_text_field.dart';
 import 'package:food_app/core/widgets/field_label.dart';
 import 'package:food_app/core/widgets/search_field.dart';
@@ -16,7 +17,7 @@ class AddAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,19 +26,19 @@ class AddAddressScreen extends StatelessWidget {
                 SvgPicture.asset(
                   AppIcons.mapicon,
                   width: double.infinity,
-                  height: 350,
+                  height: 350.h,
                   fit: BoxFit.cover,
                 ),
                 Positioned(
-                  top: 50,
-                  left: 20,
+                  top: 50.h,
+                  left: 20.w,
                   child: CircleAvatar(
-                    backgroundColor: AppColors.dark,
+                    backgroundColor: AppColors.secondary,
                     child: IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.arrow_back_ios_new,
-                        color: Colors.white,
-                        size: 18,
+                        color: AppColors.white,
+                        size: 18.sp,
                       ),
                       onPressed: () => Navigator.pop(context),
                     ),
@@ -47,17 +48,17 @@ class AddAddressScreen extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20.r),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const FieldLabel(label: "ADDRESS"),
                   SearchField(
                     hintText: "3235 Royal Ln. Mesa, New Jersey 34567",
-                    prefixIcon: Image.asset(AppImages.location),
+                    prefixIcon: Image.asset(AppImages.location, width: 20.w, height: 20.h),
                   ),
 
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15.h),
                   Row(
                     children: [
                       Expanded(
@@ -69,7 +70,7 @@ class AddAddressScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(width: 15),
+                      SizedBox(width: 15.w),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,20 +83,22 @@ class AddAddressScreen extends StatelessWidget {
                     ],
                   ),
 
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15.h),
                   const FieldLabel(label: "APPARTMENT"),
                   const CustomTextField(hint: "345"),
 
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   const FieldLabel(label: "LABEL AS"),
                   const AddressSelector(),
 
-                  const SizedBox(height: 40),
+                  SizedBox(height: 40.h),
                   SizedBox(
                     width: double.infinity,
                     child: CustomButton(
                       text: "SAVE LOCATION",
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
                   ),
                 ],
