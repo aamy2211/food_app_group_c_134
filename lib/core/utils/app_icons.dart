@@ -5,13 +5,13 @@ abstract class AppIcons {
   static const String user = 'assets/icons/User.svg';
   static const String camera = 'assets/icons/Camera.svg';
   static const String appele = 'assets/icons/Appel.svg';
-  static const String bell = 'assets/icons/Bell.svg';
+  static const String bell = "assets/icons/bell.svg";
   static const String call = 'assets/icons/Call.svg';
   static const String car = 'assets/icons/Car.svg';
   static const String check = 'assets/icons/Check.svg';
   static const String creditCard = 'assets/icons/credit_card.svg';
   static const String cross = 'assets/icons/Cross.svg';
-  static const String cycleCheck = 'assets/icons/CycleCheck.svg';
+  static const String cycleCheck = 'assets/icons/cycle_check.svg';
   static const String eye = 'assets/icons/eye.svg';
   static const String facebook = 'assets/icons/facebook.svg';
   static const String filter = 'assets/icons/Filter.svg';
@@ -61,4 +61,11 @@ abstract class AppIcons {
   static const String paypal = 'assets/icons/paypal.svg';
   static const String bigCard = 'assets/icons/bigcard.svg';
   static const String mapicon = 'assets/icons/mapicon.svg';
+  static const String map = 'assets/icons/map.svg';
+  static const String cart = 'assets/images/shopping-bag.svg';
+  static const String userReviews = 'assets/icons/userr_eviews.svg';
+  static const String settings = 'assets/icons/Settings.svg';
+  static const String email = 'assets/icons/email.svg';
+  static const String edit = 'assets/icons/edit.svg';
+  static const String pen = 'assets/icons/pen.svg';
 }

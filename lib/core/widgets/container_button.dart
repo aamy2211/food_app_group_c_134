@@ -8,12 +8,14 @@ class ContainerButton extends StatelessWidget {
     required this.child,
     this.height = 45,
     this.width = 45,
+    this.radius = 50,
   });
   final Color color;
   final Widget child;
   final VoidCallback onTap;
   final double height;
   final double width;
+  final double radius;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class ContainerButton extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(radius),
         ),
         child: child,
       ),
