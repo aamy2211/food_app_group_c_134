@@ -8,7 +8,6 @@ import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
-import 'package:food_app/core/widgets/custom_badge_button.dart';
 import 'package:food_app/core/widgets/custom_text_field.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -18,12 +17,12 @@ class EditProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: ContainerButton(
           color: AppColors.primary,
-          height: 62,
+          height: 62.h,
           onTap: () {},
-          // radius: 15,
+          radius: 15.r,
           child: Center(
             child: Text(
               "Save",
@@ -58,7 +57,7 @@ class EditProfileScreen extends StatelessWidget {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 190, top: 70),
+                  padding: EdgeInsets.only(left: 190.w, top: 80.h),
                   child: Row(
                     children: [
                       ContainerButton(
@@ -68,7 +67,7 @@ class EditProfileScreen extends StatelessWidget {
                         onTap: () {},
                         child: Padding(
                           padding: const EdgeInsets.all(7),
-                          // child: SvgPicture.asset(AppIcons.pen),
+                          child: SvgPicture.asset(AppIcons.pen),
                         ),
                       ),
                     ],
@@ -76,19 +75,19 @@ class EditProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30.h),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Column(
                 children: [
                   CustomTextField(label: "Full Name", hint: "Vishal Khadok"),
-                  SizedBox(height: 30),
+                  SizedBox(height: 30.h),
 
                   CustomTextField(label: "Email", hint: "hello@halallab.co"),
-                  SizedBox(height: 24),
+                  SizedBox(height: 24.h),
 
                   CustomTextField(label: "Phone Number", hint: "408-841-0926"),
-                  SizedBox(height: 24),
+                  SizedBox(height: 24.h),
                   CustomTextField(label: "Bio", hint: "I love fast food"),
                 ],
               ),

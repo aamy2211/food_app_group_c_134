@@ -9,12 +9,12 @@ class Ingridents extends StatelessWidget {
     required this.icon,
     this.color = AppColors.ingridents,
     this.color1,
-    this.s = 0,
+    this.size = 0,
   });
   final String icon;
   final Color color;
   final Color? color1;
-  final double s;
+  final double size;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +26,7 @@ class Ingridents extends StatelessWidget {
         borderRadius: BorderRadius.circular(50.r),
       ),
       child: Padding(
-        padding: EdgeInsets.all(s),
+        padding: EdgeInsets.all(size),
         child: SvgPicture.asset(
           icon,
           colorFilter: color1 != null

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
-import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
@@ -63,7 +62,11 @@ class AddAddressScreen extends StatelessWidget {
                   const FieldLabel(label: "ADDRESS"),
                   SearchField(
                     hintText: "3235 Royal Ln. Mesa, New Jersey 34567",
-                    prefixIcon: Image.asset(AppImages.location, width: 20.w, height: 20.h),
+                    prefixIcon: Image.asset(
+                      AppImages.location,
+                      width: 20.w,
+                      height: 20.h,
+                    ),
                   ),
 
                   SizedBox(height: 15.h),

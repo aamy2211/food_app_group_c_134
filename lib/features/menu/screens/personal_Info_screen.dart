@@ -32,23 +32,23 @@ class PersonalInfoScreen extends StatelessWidget {
                   Text("Personal Info", style: TextStyles.body2),
                   SizedBox(width: 80.w),
 
-                  // ContainerButton(
-                  //   color: Colors.transparent,
+                  ContainerButton(
+                    color: Colors.transparent,
 
-                  //   onTap: () {
-                  //     pushTo(context, EditProfileScreen());
-                  //   },
-                  //   // child: SvgPicture.asset(AppIcons.edit),
-                  // ),
+                    onTap: () {
+                      pushTo(context, EditProfileScreen());
+                    },
+                    child: SvgPicture.asset(AppIcons.edit),
+                  ),
                 ],
               ),
             ),
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: CircleAvatar(
-                    maxRadius: 50,
+                    maxRadius: 50.r,
                     backgroundColor: AppColors.green,
                   ),
                 ),
@@ -66,10 +66,10 @@ class PersonalInfoScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 32),
+            SizedBox(height: 32.h),
             Stack(
               children: [
-                CardBackground(height: 220),
+                CardBackground(height: 220.h),
                 Column(
                   children: [
                     ProfileMenuItem(
@@ -79,19 +79,19 @@ class PersonalInfoScreen extends StatelessWidget {
                       color: AppColors.primary,
                       onPressed: () {},
                     ),
-                    // ProfileMenuItem(
-                    //   icon: AppIcons.email,
-                    //   text: 'Email',
-                    //   text1: "hello@halallab.co",
-                    //   onPressed: () {},
-                    // ),
-                    // ProfileMenuItem(
-                    //   icon: AppIcons.call,
-                    //   color: AppColors.blue,
-                    //   text: 'Phone Number',
-                    //   text1: "408-841-0926",
-                    //   onPressed: () {},
-                    // ),
+                    ProfileMenuItem(
+                      icon: AppIcons.email,
+                      text: 'Email',
+                      text1: "hello@halallab.co",
+                      onPressed: () {},
+                    ),
+                    ProfileMenuItem(
+                      icon: AppIcons.call,
+                      color: AppColors.blue,
+                      text: 'Phone Number',
+                      text1: "408-841-0926",
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ],
