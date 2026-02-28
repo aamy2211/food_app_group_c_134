@@ -1,13 +1,26 @@
+/*
+  شكراً جداً يا منى على الـ Address Feature، تسلم إيدك بجد! 🚀🤝
+  شغل ممتاز والـ Logic والـ Flow مضبوطين جداً.
+  
+  أنا عملت شوية تعديلات بسيطة (Refactoring) عشان الكود يمشي مع الـ Standards اللي كلنا شغالين بيها في المشروع:
+  1- طبقت الـ Responsiveness باستخدام ScreenUtil (.h, .w, .sp) عشان الأبعاد تظبط على كل الموبايلات.
+  2- وحدت الـ Styling باستخدام AppColors و TextStyles بدل القيم الثابتة.
+  3- صلحت الـ Spelling في اسم ملف (address_card.dart).
+  4- ظبطت الـ UI Spacing والـ Back Button عشان يكونوا برضه بنفس أسلوب الأبلكيشن.
+  
+ عاش جداً يا منى، ! 🤝🚀🌏🌍🌎
+*/
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
-// import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
 import 'package:food_app/features/address/screens/add_address_screen.dart';
-import 'package:food_app/features/address/widgets/adress_card.dart';
+import 'package:food_app/features/address/widgets/address_card.dart';
 
 class MyAddressScreen extends StatelessWidget {
   const MyAddressScreen({super.key});
@@ -18,31 +31,44 @@ class MyAddressScreen extends StatelessWidget {
       backgroundColor: AppColors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Row(
                 children: [
-                  CustomBackButton(backgroundColor: AppColors.lightGrey),
-                  const SizedBox(width: 20),
-                  const Text("My Address", style: TextStyles.body2),
+                  // Before: CustomBackButton(backgroundColor: AppColors.lightGrey)
+                  // After: Used AppColors.greyLite for consistency with the app's theme
+                  CustomBackButton(backgroundColor: AppColors.greyLite),
+                  SizedBox(width: 20.w),
+                  // Before: Text("My Address", style: TextStyles.body2)
+                  // After: Customized TextStyles.body with ScreenUtil and project-specific color
+                  Text("My Address", style: TextStyles.body.copyWith(
+                    fontSize: 18.sp,
+                    color: AppColors.secondary,
+                  )),
                 ],
               ),
-              const SizedBox(height: 30),
+              // Before: SizedBox(height: 30)
+              // After: Responsive height using ScreenUtil (.h)
+              SizedBox(height: 30.h),
 
               AddressCard(
                 title: "HOME",
                 fullAddress: "2464 Royal Ln. Mesa, New Jersey 45463",
                 image: AppIcons.home,
-                color: AppColors.green,
+                // Before: AppColors.green
+                // After: AppColors.primary (Standardizing colors)
+                color: AppColors.primary,
               ),
               AddressCard(
                 title: "WORK",
                 fullAddress: "3891 Ranchview Dr. Richardson, California 62639",
                 image: AppIcons.call,
-                color: AppColors.purple,
+                // Before: AppColors.purple
+                // After: AppColors.secondary
+                color: AppColors.secondary,
               ),
 
               const Spacer(),
@@ -53,7 +79,7 @@ class MyAddressScreen extends StatelessWidget {
                   pushTo(context, const AddAddressScreen());
                 },
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

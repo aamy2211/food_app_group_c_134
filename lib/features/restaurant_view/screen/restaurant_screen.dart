@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/core/functions/navigations.dart';
 
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
+import 'package:food_app/features/menu/screens/profile_screen.dart';
 import 'package:food_app/features/restaurant_view/widgets/category_selector/category_selector.dart';
 import 'package:food_app/features/restaurant_view/widgets/food_card_list/food_card_list.dart';
 import 'package:food_app/features/restaurant_view/widgets/restaurant_info/restaurant_info_row.dart';
@@ -32,10 +34,14 @@ class RestaurantScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CustomBackButton(backgroundColor: AppColors.iceBlue),
+                      const CustomBackButton(
+                        backgroundColor: AppColors.iceBlue,
+                      ),
                       ContainerButton(
                         color: AppColors.iceBlue,
-                        onTap: () {},
+                        onTap: () {
+                          pushTo(context, ProfileScreen());
+                        },
                         child: const Icon(Icons.more_horiz),
                       ),
                     ],
@@ -71,9 +77,12 @@ class RestaurantScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text(
+                  Text(
                     'Burger (10)',
-                    style: TextStyles.body.copyWith(fontSize: 15.sp, fontWeight: FontWeight.bold),
+                    style: TextStyles.body.copyWith(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   SizedBox(height: 16.h),
                   const FoodCardList(),

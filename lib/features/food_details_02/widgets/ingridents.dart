@@ -4,9 +4,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 
 class Ingridents extends StatelessWidget {
-  const Ingridents({super.key, required this.icon});
+  const Ingridents({
+    super.key,
+    required this.icon,
+    this.color = AppColors.ingridents,
+    this.color1,
+    this.size = 0,
+  });
   final String icon;
-
+  final Color color;
+  final Color? color1;
+  final double size;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,10 +22,18 @@ class Ingridents extends StatelessWidget {
       width: 45.w,
       height: 45.h,
       decoration: BoxDecoration(
-        color: AppColors.ingridents,
+        color: color,
         borderRadius: BorderRadius.circular(50.r),
       ),
-      child: SvgPicture.asset(icon),
+      child: Padding(
+        padding: EdgeInsets.all(size),
+        child: SvgPicture.asset(
+          icon,
+          colorFilter: color1 != null
+              ? ColorFilter.mode(color1!, BlendMode.srcIn)
+              : null,
+        ),
+      ),
     );
   }
 }

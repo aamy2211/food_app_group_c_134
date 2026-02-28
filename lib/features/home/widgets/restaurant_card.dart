@@ -14,6 +14,7 @@ class RestaurantCard extends StatelessWidget {
   final String rating;
   final String deliveryFee;
   final String deliveryTime;
+  final VoidCallback? onTap;
 
   const RestaurantCard({
     super.key,
@@ -23,12 +24,13 @@ class RestaurantCard extends StatelessWidget {
     required this.rating,
     required this.deliveryFee,
     required this.deliveryTime,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap: onTap ?? () {
         pushTo(context, const RestaurantScreen());
       },
       child: Container(

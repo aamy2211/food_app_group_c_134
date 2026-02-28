@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
@@ -21,29 +22,33 @@ class AddressCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 15),
-      padding: const EdgeInsets.all(16),
+      // Before: margin: const EdgeInsets.only(bottom: 15)
+      // After: ScreenUtil for responsive margins and padding
+      margin: EdgeInsets.only(bottom: 15.h),
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: AppColors.greyLite,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(15.r),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.all(10.r),
             decoration: const BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               shape: BoxShape.circle,
             ),
             child: SvgPicture.asset(
               image,
-              width: 20,
-              height: 20,
+              // Before: width: 20, height: 20
+              // After: Responsive dimensions
+              width: 20.w,
+              height: 20.h,
               colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
             ),
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: 12.w),
 
           Expanded(
             child: Column(
@@ -54,14 +59,16 @@ class AddressCard extends StatelessWidget {
                   title,
                   style: TextStyles.caption.copyWith(
                     fontWeight: FontWeight.bold,
+                    color: AppColors.secondary,
+                    fontSize: 14.sp,
                   ),
                 ),
-                const SizedBox(height: 5),
+                SizedBox(height: 5.h),
                 Text(
                   fullAddress,
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12,
+                  style: TextStyles.caption.copyWith(
+                    color: AppColors.describtion,
+                    fontSize: 12.sp,
                     height: 1.4,
                   ),
                   softWrap: true,
@@ -72,14 +79,13 @@ class AddressCard extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(width: 8),
-          // أيقونات التعديل والمسح
+          SizedBox(width: 8.w),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SvgPicture.asset(AppImages.edit, width: 20, height: 20),
-              const SizedBox(width: 10),
-              SvgPicture.asset(AppImages.delete, width: 20, height: 20),
+              SvgPicture.asset(AppImages.edit, width: 20.w, height: 20.h),
+              SizedBox(width: 10.w),
+              SvgPicture.asset(AppImages.delete, width: 20.w, height: 20.h),
             ],
           ),
         ],
