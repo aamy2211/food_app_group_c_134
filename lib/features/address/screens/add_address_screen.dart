@@ -26,18 +26,26 @@ class AddAddressScreen extends StatelessWidget {
                 SvgPicture.asset(
                   AppIcons.mapicon,
                   width: double.infinity,
+                  // Before: height: 350
+                  // After: Responsive height using ScreenUtil (.h)
                   height: 350.h,
                   fit: BoxFit.cover,
                 ),
                 Positioned(
+                  // Before: top: 50, left: 20
+                  // After: ScreenUtil for responsive positioning
                   top: 50.h,
                   left: 20.w,
                   child: CircleAvatar(
+                    // Before: AppColors.dark
+                    // After: AppColors.secondary (Standardizing colors)
                     backgroundColor: AppColors.secondary,
                     child: IconButton(
                       icon: Icon(
                         Icons.arrow_back_ios_new,
                         color: AppColors.white,
+                        // Before: size: 18
+                        // After: Responsive size using (.sp)
                         size: 18.sp,
                       ),
                       onPressed: () => Navigator.pop(context),

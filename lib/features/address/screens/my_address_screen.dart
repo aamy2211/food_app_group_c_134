@@ -8,7 +8,7 @@
   3- صلحت الـ Spelling في اسم ملف (address_card.dart).
   4- ظبطت الـ UI Spacing والـ Back Button عشان يكونوا برضه بنفس أسلوب الأبلكيشن.
   
-  عاش جداً يا منى، وفي انتظار باقي الصفحات! 🤝🚀🌏🌍🌎
+ عاش جداً يا منى، ! 🤝🚀🌏🌍🌎
 */
 
 import 'package:flutter/material.dart';
@@ -38,26 +38,36 @@ class MyAddressScreen extends StatelessWidget {
               SizedBox(height: 20.h),
               Row(
                 children: [
+                  // Before: CustomBackButton(backgroundColor: AppColors.lightGrey)
+                  // After: Used AppColors.greyLite for consistency with the app's theme
                   CustomBackButton(backgroundColor: AppColors.greyLite),
                   SizedBox(width: 20.w),
+                  // Before: Text("My Address", style: TextStyles.body2)
+                  // After: Customized TextStyles.body with ScreenUtil and project-specific color
                   Text("My Address", style: TextStyles.body.copyWith(
                     fontSize: 18.sp,
                     color: AppColors.secondary,
                   )),
                 ],
               ),
+              // Before: SizedBox(height: 30)
+              // After: Responsive height using ScreenUtil (.h)
               SizedBox(height: 30.h),
 
               AddressCard(
                 title: "HOME",
                 fullAddress: "2464 Royal Ln. Mesa, New Jersey 45463",
                 image: AppIcons.home,
+                // Before: AppColors.green
+                // After: AppColors.primary (Standardizing colors)
                 color: AppColors.primary,
               ),
               AddressCard(
                 title: "WORK",
                 fullAddress: "3891 Ranchview Dr. Richardson, California 62639",
                 image: AppIcons.call,
+                // Before: AppColors.purple
+                // After: AppColors.secondary
                 color: AppColors.secondary,
               ),
 

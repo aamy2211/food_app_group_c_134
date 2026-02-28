@@ -22,6 +22,8 @@ class AddressCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // Before: margin: const EdgeInsets.only(bottom: 15)
+      // After: ScreenUtil for responsive margins and padding
       margin: EdgeInsets.only(bottom: 15.h),
       padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
@@ -39,6 +41,8 @@ class AddressCard extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               image,
+              // Before: width: 20, height: 20
+              // After: Responsive dimensions
               width: 20.w,
               height: 20.h,
               colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
