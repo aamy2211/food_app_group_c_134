@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomTextField extends StatefulWidget {
-  final String label;
+  final String? label;
   final String hint;
   final bool obscureText;
   final Widget? suffixIcon;
   final TextInputType? keyboardType;
+  final TextEditingController? controller;
+  final FormFieldValidator<String>? validator;
 
   const CustomTextField({
     super.key,
-    required this.label,
+    this.label,
     required this.hint,
     this.obscureText = false,
     this.suffixIcon,
     this.keyboardType,
+    this.controller,
+    this.validator,
   });
 
   @override
@@ -42,13 +46,16 @@ class _CustomTextFieldState extends State<CustomTextField> {
           width: 24,
           height: 24,
         ),
+        tooltip: _obscured ? 'Show password' : 'Hide password',
         onPressed: () {
           setState(() {
             _obscured = !_obscured;
           });
         },
       );
-    } else if (activeSuffixIcon != null) {
+    }
+
+    if (activeSuffixIcon != null) {
       activeSuffixIcon = Padding(
         padding: const EdgeInsets.all(12.0),
         child: activeSuffixIcon,
@@ -58,31 +65,31 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.label.toUpperCase(),
-          style: GoogleFonts.sen(
-            color: const Color(0xFF32343E), // Dark text for label
-            fontSize: 13,
-            fontWeight: FontWeight.w400,
+        if (widget.label != null)
+          Text(
+            widget.label!.toUpperCase(),
+            style: GoogleFonts.sen(
+              color: const Color(0xFF32343E),
+              fontSize: 13,
+              fontWeight: FontWeight.w400,
+            ),
           ),
-        ),
-        const SizedBox(height: 8),
+        if (widget.label != null) const SizedBox(height: 8),
         TextFormField(
+          controller: widget.controller,
+          validator: widget.validator,
           obscureText: _obscured,
           keyboardType: widget.keyboardType,
-          style: GoogleFonts.sen(
-            color: Colors.black, // Dark text for input
-            fontSize: 16,
-          ),
+          style: GoogleFonts.sen(color: Colors.black, fontSize: 16),
           decoration: InputDecoration(
             hintText: widget.hint,
             hintStyle: GoogleFonts.sen(
-              color: const Color(0xFFA0A5BA), // Grey hint
+              color: const Color(0xFFA0A5BA),
               fontSize: 14,
             ),
             suffixIcon: activeSuffixIcon,
             filled: true,
-            fillColor: const Color(0xFFF0F5FA), // Light grey field background
+            fillColor: const Color(0xFFF0F5FA),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide.none,

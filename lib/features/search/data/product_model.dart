@@ -63,3 +63,9 @@ List<ProductModel> productCard = [
     description: "Cafecafachino",
   ),
 ];
+
+List<ProductModel> addressKeywords = [
+  ProductModel(id: "5", name: "Home"),
+  ProductModel(id: "6", name: "work"),
+  ProductModel(id: "7", name: "other"),
+];

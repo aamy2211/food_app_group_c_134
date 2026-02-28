@@ -60,4 +60,5 @@ abstract class AppIcons {
   static const String mastercard = 'assets/icons/mastercard.svg';
   static const String paypal = 'assets/icons/paypal.svg';
   static const String bigCard = 'assets/icons/bigcard.svg';
+  static const String mapicon = 'assets/icons/mapicon.svg';
 }
