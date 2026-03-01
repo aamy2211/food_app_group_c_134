@@ -10,9 +10,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/theme/themes.dart';
-import 'package:food_app/features/address/screens/my_address_screen.dart';
-import 'package:food_app/features/address/screens/add_address_screen.dart';
-import 'package:food_app/features/splash/splash_view.dart';
+import 'package:food_app/features/menu/screens/profile_screen.dart';
 //import 'core/utils/app_fonts.dart';
 
 void main() {
@@ -32,7 +30,7 @@ class FoodApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Food App Group C-134',
           theme: AppThemes.lightThemes,
-          home: MyAddressScreen(),
+          home: const ProfileScreen(),
         );
       },
     );

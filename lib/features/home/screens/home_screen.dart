@@ -10,7 +10,10 @@ import 'package:food_app/core/widgets/section_header.dart';
 import 'package:food_app/core/widgets/category_list.dart';
 import 'package:food_app/core/widgets/circular_icon_button.dart';
 import 'package:food_app/core/widgets/location_header_dropdown.dart';
+import 'package:food_app/features/address/screens/my_address_screen.dart';
 import 'package:food_app/features/home/widgets/restaurant_card.dart';
+import 'package:food_app/features/menu/screens/profile_screen.dart';
+import 'package:food_app/features/restaurant_view/screen/restaurant_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -36,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                     CircularIconButton(
                       iconPath: AppImages.menu,
                       onPressed: () {
-                        // TODO: Open Drawer or Menu
+                        pushTo(context, const ProfileScreen());
                       },
                     ),
 
@@ -44,9 +47,14 @@ class HomeScreen extends StatelessWidget {
                       width: 4,
                     ), // 4 pixels left padding to perfectly align text starting at (X = 48)
                     // Location
-                    const Expanded(
-                      child: LocationHeaderDropdown(
-                        selectedLocation: 'Halal Lab office',
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          pushTo(context, const MyAddressScreen());
+                        },
+                        child: const LocationHeaderDropdown(
+                          selectedLocation: 'Halal Lab office',
+                        ),
                       ),
                     ),
 
@@ -127,25 +135,31 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 16),
 
                 // Open Restaurants Card
-                const RestaurantCard(
+                RestaurantCard(
                   imageUrl: '', // Placeholder for now
                   name: 'Rose Garden Restaurant',
                   tags: 'Burger - Chicken - Riche - Wings',
                   rating: '4.7',
                   deliveryFee: 'Free',
                   deliveryTime: '20 min',
+                  onTap: () {
+                    pushTo(context, const RestaurantScreen());
+                  },
                 ),
 
                 const SizedBox(height: 16),
 
                 // Second Restaurant Card
-                const RestaurantCard(
+                RestaurantCard(
                   imageUrl: '', // Placeholder for now
                   name: 'Tasty Treat Gallery',
                   tags: 'Pasta - Healthy - Pizza - Drinks',
                   rating: '4.9',
                   deliveryFee: 'Free',
                   deliveryTime: '15 min',
+                  onTap: () {
+                    pushTo(context, const RestaurantScreen());
+                  },
                 ),
 
                 const SizedBox(height: 24),

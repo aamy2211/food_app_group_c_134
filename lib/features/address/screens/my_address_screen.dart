@@ -36,13 +36,12 @@ class MyAddressScreen extends StatelessWidget {
                 title: "HOME",
                 fullAddress: "2464 Royal Ln. Mesa, New Jersey 45463",
                 image: AppIcons.home,
-                color: AppColors.green,
+                color: AppColors.blue,
               ),
               AddressCard(
                 title: "WORK",
                 fullAddress: "3891 Ranchview Dr. Richardson, California 62639",
-                image: AppIcons.call,
-                color: AppColors.purple,
+                image: AppIcons.briefcase,
               ),
 
               const Spacer(),

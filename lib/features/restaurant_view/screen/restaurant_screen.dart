@@ -6,8 +6,8 @@ import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
-import 'package:food_app/features/restaurant_view/widgets/category_selector/category_selector.dart';
 import 'package:food_app/features/restaurant_view/widgets/food_card_list/food_card_list.dart';
+import 'package:food_app/features/restaurant_view/widgets/category_selector/category_selector.dart';
 import 'package:food_app/features/restaurant_view/widgets/restaurant_info/restaurant_info_row.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
@@ -15,6 +15,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class RestaurantScreen extends StatelessWidget {
   const RestaurantScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class RestaurantScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                const ImageCarousel(),
+                ImageCarousel(),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: 40.h,
@@ -32,11 +33,11 @@ class RestaurantScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CustomBackButton(backgroundColor: AppColors.iceBlue),
+                      CustomBackButton(backgroundColor: AppColors.iceBlue),
                       ContainerButton(
                         color: AppColors.iceBlue,
                         onTap: () {},
-                        child: const Icon(Icons.more_horiz),
+                        child: Icon(Icons.more_horiz),
                       ),
                     ],
                   ),
@@ -44,41 +45,40 @@ class RestaurantScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const RestaurantInfoRow(),
+                  RestaurantInfoRow(),
                   SizedBox(height: 20.h),
+
                   Text(
                     'Spicy Restaurant',
-                    style: TextStyles.body.copyWith(fontSize: 20.sp),
+                    style: TextStyles.body.copyWith(fontSize: 20),
                   ),
-                  SizedBox(height: 8.h),
                   Text(
                     'Maecenas sed diam eget risus varius blandit sit omet non magna. Integer posuere erat a ante venenatis dopibus posuere velit aliquet.',
                     style: TextStyles.captionB.copyWith(
                       color: AppColors.describtion,
-                      fontSize: 12.sp,
+                      fontSize: 12,
                     ),
                   ),
                 ],
               ),
             ),
-            const CategorySelector(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   Text(
+            CategorySelector(),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 190, top: 20),
+                  child: Text(
                     'Burger (10)',
-                    style: TextStyles.body.copyWith(fontSize: 15.sp, fontWeight: FontWeight.bold),
+                    style: TextStyles.body.copyWith(fontSize: 15),
                   ),
-                  SizedBox(height: 16.h),
-                  const FoodCardList(),
-                ],
-              ),
+                ),
+
+                FoodCardList(),
+              ],
             ),
           ],
         ),
@@ -111,9 +111,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 AppImages.picture1,
               ].map((image) {
                 return ClipRRect(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(25.r),
-                  ),
+                  borderRadius: BorderRadius.circular(30),
                   child: Image.asset(
                     image,
                     fit: BoxFit.cover,
@@ -139,8 +137,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
               activeIndex: activeIndex,
               count: 5,
               effect: WormEffect(
-                dotHeight: 8.h,
-                dotWidth: 8.w,
+                dotHeight: 8,
+                dotWidth: 8,
                 activeDotColor: AppColors.white,
                 dotColor: AppColors.imageBackground,
               ),

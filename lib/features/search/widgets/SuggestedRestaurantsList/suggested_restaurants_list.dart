@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/features/search/data/product_model.dart';
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/build_restaurant_item.dart';
 
 class SuggestedRestaurantsList extends StatelessWidget {
@@ -15,11 +14,9 @@ class SuggestedRestaurantsList extends StatelessWidget {
         crossAxisSpacing: 10,
         childAspectRatio: 3,
       ),
-      itemCount: suggestedRestaurants.length,
+      itemCount: 3,
       itemBuilder: (context, index) {
-        var model = suggestedRestaurants[index];
-
-        return BuildRestaurantItem(model: model);
+        return buildRestaurantItem();
       },
     );
   }

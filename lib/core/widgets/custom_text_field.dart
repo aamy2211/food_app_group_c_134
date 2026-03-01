@@ -10,6 +10,7 @@ class CustomTextField extends StatefulWidget {
   final TextInputType? keyboardType;
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
+  final int maxLines;
 
   const CustomTextField({
     super.key,
@@ -20,6 +21,7 @@ class CustomTextField extends StatefulWidget {
     this.keyboardType,
     this.controller,
     this.validator,
+    this.maxLines = 1,
   });
 
   @override
@@ -79,6 +81,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           controller: widget.controller,
           validator: widget.validator,
           obscureText: _obscured,
+          maxLines: _obscured ? 1 : widget.maxLines,
           keyboardType: widget.keyboardType,
           style: GoogleFonts.sen(color: Colors.black, fontSize: 16),
           decoration: InputDecoration(

@@ -7,6 +7,7 @@ import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/core/widgets/custom_badge_button.dart';
 
 import 'package:food_app/core/widgets/search_field.dart';
+
 import 'package:food_app/features/search/widgets/PopularFoodList/popular_food_list.dart';
 import 'package:food_app/features/search/widgets/RecentKeywordsList/recent_keywords_list.dart';
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/suggested_restaurants_list.dart';
